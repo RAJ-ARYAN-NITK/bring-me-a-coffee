@@ -86,7 +86,7 @@ export default function Home() {
 
       <div className="text-white container mx-auto pb-32 pt-14 flex flex-col items-center justify-center">
         <h2 className="text-3xl font-bold text-center mb-14"> Learn more about us </h2>
-        <iframe width="720" height="609" src="https://www.youtube.com/embed/y9hQfMCwAvg" title="Let Us Support You | Albion Center for Professional Development" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="720" height="609" src="https://www.youtube.com/embed/y9hQfMCwAvg" title="Let Us Support You | Albion Center for Professional Development" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
       </div>
     </div>
   );
