@@ -27,7 +27,7 @@ export const initiate = async (amount, to_username, paymentform) => {
     });
 
     const options = {
-        amount: Math.round(parseFloat(amount) * 100), // ₹ → paisa
+        amount: Math.round(parseFloat(amount)), // ₹ → paisa
         currency: "INR",
     };
 
