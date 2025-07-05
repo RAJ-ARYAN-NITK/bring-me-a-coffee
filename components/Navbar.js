@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav className="bg-gray-900 text-white flex justify-between items-center px-4 md:h-16 flex-direction-col md:flex-row ">
       {/* Logo */}
       <Link className="logo font-bold text-lg flex items-center justify-center" href="/">
-        <Image className="invertImg" src="/coffee.gif" width={44} height={44} alt="Coffee logo" />
+        <Image className="invertImg" src="/coffee.gif" width={44} height={44} alt="Coffee logo" unoptimized />
         <span> BringMeACoffee!!! </span>
       </Link>
 

@@ -121,9 +121,10 @@ const PaymentPage = ({ username }) => {
           width={1440}
           height={20}
           onError={(e) => (e.target.src = "/patreon_banner.gif")}
+          unoptimized
         />
         <div className="absolute -bottom-15 right-[47%] border border-yellow-500 rounded-full">
-          <img
+          <Image
             className="rounded-full"
             width={80}
             height={80}

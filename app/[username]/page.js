@@ -28,6 +28,6 @@ export default Username
  
 export async function generateMetadata({ params }) {
   return {
-    title: `Support ${params.username} - Bring me a Coffee`,
+    title: `Support ${params.username} - Get Me A Chai`,
   }
 }

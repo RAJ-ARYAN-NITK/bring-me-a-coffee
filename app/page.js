@@ -8,7 +8,7 @@ export default function Home() {
         <div className="font-bold flex gap-2 md:gap-2 md:text-5xl justify-center items-center text-3xl">
             Buy Me a Coffee
           <span>
-            <Image className="invertImg" src="/coffee.gif" alt="Coffee animation" width={80} height={80} />
+            <Image className="invertImg" src="/coffee.gif" alt="Coffee animation" width={80} height={80} unoptimized />
           </span>
         </div>
         <p className="text-xs">
@@ -53,6 +53,7 @@ export default function Home() {
               height={60}
               src="/man.gif"
               alt="A man icon representing fans"
+              unoptimized
             />
             <p className="font-bold">Fans want to help</p>
             <p className="text-center text-xs">Your fans are available to support you</p>
@@ -64,6 +65,7 @@ export default function Home() {
               height={60}
               src="/coin.gif"
               alt="A coin icon representing funding"
+              unoptimized
             />
             <p className="font-bold">Fans want to contribute</p>
             <p className="text-center text-sm">Your fans are willing to contribute financially</p>
@@ -75,6 +77,7 @@ export default function Home() {
               height={60}
               src="/group.gif"
               alt="A group icon representing community"
+              unoptimized
             />
             <p className="font-bold">Fans want to collaborate</p>
             <p className="text-center text-xs">Your fans are ready to collaborate with you</p>
