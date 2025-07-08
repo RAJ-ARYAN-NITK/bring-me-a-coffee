@@ -37,14 +37,29 @@
 
 ## 🧑‍💻 Getting Started
 
-### 1. Clone the repo
+### 1.Clone the repo
 ```bash
 git clone https://github.com/RAJ-ARYAN-NITK/bring-me-a-coffee
 cd bring-me-a-coffee
+```
 
 
 ### 2.Install Dependencies
-```
+```bash
 npm install
 # or
 yarn install
+```
+
+### 3.Set up environment variables
+```bash
+MONGODB_URI=your_mongodb_connection_string
+NEXTAUTH_SECRET=your_nextauth_secret
+NEXTAUTH_URL=http://localhost:3000
+RAZORPAY_KEY_ID=your_razorpay_key
+RAZORPAY_KEY_SECRET=your_razorpay_secret
+```
+### 4.Run the app
+```bash
+npm run dev
+```
