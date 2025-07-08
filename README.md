@@ -41,3 +41,10 @@
 ```bash
 git clone https://github.com/RAJ-ARYAN-NITK/bring-me-a-coffee
 cd bring-me-a-coffee
+
+
+### 2.Install Dependencies
+```
+npm install
+# or
+yarn install
