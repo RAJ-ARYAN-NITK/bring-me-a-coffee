@@ -4,6 +4,8 @@ import Razorpay from "razorpay";
 import Payment from "@/models/Payment";
 import User from "@/models/User";
 import connectDB from "@/db/connectDB";
+import { toPlainObject } from "@/utils/toPlainObject"; //
+
 
 
 export const initiate = async (amount, to_username, paymentform) => {
@@ -49,7 +51,8 @@ export const initiate = async (amount, to_username, paymentform) => {
 export const fetchuser = async (username) => {
     await connectDB();
     const  user = await User.findOne({username }).lean();
-    return user;
+    if (!user) return null;
+    return toPlainObject(user); // return user earlier
 };
 
 export const fetchpayments = async (username) => {
@@ -59,7 +62,7 @@ export const fetchpayments = async (username) => {
     .sort({ amount: -1 })
     .limit(10)
     .lean();
-  return payments;
+    return payments.map(toPlainObject); // return payments earlier
 };
 
 

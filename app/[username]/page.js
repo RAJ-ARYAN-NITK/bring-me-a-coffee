@@ -110,12 +110,12 @@ const Username = async ({ params }) => {
   // Convert the user document to a plain JS object
   const plainUser = toPlainObject(user)
   console.dir(plainUser, { depth: null });
-  const safeUser = JSON.parse(JSON.stringify(plainUser));
+  // const safeUser = JSON.parse(JSON.stringify(plainUser));
 
   return (
   <>
       {/* Pass plainUser to your client component if you need more than the username */}
-      <PaymentPage username={awaitedParams.username} user={safeUser} />
+      <PaymentPage username={awaitedParams.username} user={plainUser} />
   </>
   )
 }
