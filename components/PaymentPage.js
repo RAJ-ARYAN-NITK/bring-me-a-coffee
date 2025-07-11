@@ -48,7 +48,7 @@ const PaymentPage = ({ username }) => {
         router.push(`/${username}`);
       }, 5500);
     }
-  }, [searchParams]);
+  }, [searchParams,router, username]);
   
 
   const handleChange = (e) => {
@@ -137,7 +137,7 @@ const PaymentPage = ({ username }) => {
 
       <div className="info flex justify-center items-center my-16 flex-col gap-2">
         <div className="font-bold text-lg">@{username}</div>
-        <div className="text-slate-400">Let's help {username} get a Coffee! </div>
+        <div className="text-slate-400">Let&apos help {username} get a Coffee! </div>
         <div className="text-slate-400">
           {payments.length} Payments . ₹{payments.reduce((a, b) => a + b.amount, 0)} raised
         </div>
