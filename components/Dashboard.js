@@ -1,16 +1,25 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState , useCallback} from 'react'
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/navigation'
 import { fetchuser, updateProfile } from '@/actions/useractions'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Bounce } from 'react-toastify';
+import { get } from 'mongoose'
 
 const Dashboard = () => {
     const { data: session, update } = useSession()
     const router = useRouter()
     const [form, setform] = useState({})
+
+    // Memoize getData so it can be safely added to useEffect's dependencies
+    const getData = useCallback(async () => {
+        if (session) {
+            let u = await fetchuser(session.user.name);
+            setform(u);
+        }
+    }, [session]);
 
     useEffect(() => {
     
@@ -20,12 +29,7 @@ const Dashboard = () => {
         else if(session){
             getData()
         }
-    }, [session]);
-
-    const getData = async () => {
-        let u = await fetchuser(session.user.name)
-        setform(u)
-    }
+    }, [session,getData, router]);
 
     const handleChange = (e) => {
         setform({ ...form, [e.target.name]: e.target.value })

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Script from "next/script";
 import { useSession } from "next-auth/react";
@@ -18,9 +18,16 @@ const PaymentPage = ({ username }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
 
+  const getData = useCallback(async () => {
+    let u = await fetchuser(username);
+    setcurrentUser(u);
+    let dbpayments = await fetchpayments(username);
+    setPayments(dbpayments);
+  }, [username]);
+
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
 
   useEffect(() => {
     if (searchParams.get("paymentdone") === "true") {
@@ -48,12 +55,6 @@ const PaymentPage = ({ username }) => {
     setPaymentform({ ...paymentform, [e.target.name]: e.target.value });
   };
 
-  const getData = async (params) => {
-    let u = await fetchuser(username);
-    setcurrentUser(u);
-    let dbpayments = await fetchpayments(username);
-    setPayments(dbpayments);
-  };
 
   const pay = async (amountInPaise) => {
     try {
